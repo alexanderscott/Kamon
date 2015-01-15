@@ -45,6 +45,7 @@ object Dependencies {
   val akkaTestKit     = "com.typesafe.akka"         %%  "akka-testkit"          % akkaVersion
   val akkaRemote      = "com.typesafe.akka"         %%  "akka-remote"           % akkaVersion
   val akkaCluster     = "com.typesafe.akka"         %%  "akka-cluster"          % akkaVersion
+  val nscalaTime      = "com.github.nscala-time"    %% "nscala-time"            % "1.6.0"
   val play            = "com.typesafe.play"         %%  "play"                  % playVersion
   val playWS          = "com.typesafe.play"         %%  "play-ws"               % playVersion
   val playTest        = "org.scalatestplus"         %%  "play"                  % "1.2.0"

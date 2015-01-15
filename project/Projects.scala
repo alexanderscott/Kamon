@@ -39,7 +39,7 @@ object Projects extends Build {
       mappings in (Compile, packageBin) ++= mappings.in(kamonMacros, Compile, packageBin).value,
       mappings in (Compile, packageSrc) ++= mappings.in(kamonMacros, Compile, packageSrc).value,
       libraryDependencies ++=
-        compile(akkaActor, hdrHistogram) ++
+        compile(akkaActor, hdrHistogram, nscalaTime) ++
         provided(aspectJ) ++
         optional(logback, scalazConcurrent) ++
         test(scalatest, akkaTestKit, akkaSlf4j, slf4Jul, slf4Log4j, logback))

@@ -1,5 +1,8 @@
 package kamon
 
+import com.github.nscala_time.time.Imports._
+import org.joda.time._
+
 /**
  *  Epoch time stamp in seconds.
  */
@@ -14,7 +17,7 @@ class Timestamp(val seconds: Long) extends AnyVal {
 }
 
 object Timestamp {
-  def now: Timestamp = new Timestamp(System.currentTimeMillis() / 1000)
+  def now: Timestamp = new Timestamp(new DateTime(DateTimeZone.UTC).getMillis / 1000)
   def earlier(l: Timestamp, r: Timestamp): Timestamp = if (l <= r) l else r
   def later(l: Timestamp, r: Timestamp): Timestamp = if (l >= r) l else r
 }
@@ -42,7 +45,7 @@ class NanoTimestamp(val nanos: Long) extends AnyVal {
 }
 
 object NanoTimestamp {
-  def now: NanoTimestamp = new NanoTimestamp(System.currentTimeMillis() * 1000000)
+  def now: NanoTimestamp = new NanoTimestamp(new DateTime(DateTimeZone.UTC).getMillis * 1000000)
 }
 
 /**
